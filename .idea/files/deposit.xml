@@ -2,20 +2,146 @@
 <deposits>
     <deposit name="BSB-Bank" country="BY">
         <type>term</type>
-        <depositor>Vladislav Kizmich</depositor>
-        <account-id>01</account-id>
-        <amount-on-deposit>500</amount-on-deposit>
-        <profitability>15</profitability>
-        <time-constraints>30</time-constraints>
+        <depositor>Joe Biden</depositor>
+        <account-id>1</account-id>
+        <amount-on-deposit>182</amount-on-deposit>
+        <profitability>10</profitability>
+        <time-constraints>54</time-constraints>
     </deposit>
-    <c:Magazine>
-        <title>WebSphere Developer's Journal</title>
-        <date>2001</date>
-    </c:Magazine>
-    <c:Book>
-        <title>Java and XSLT</title>
-        <date>2001</date>
-        <isbn>0-596-00143-6</isbn>
-        <publisher>O'Reilly</publisher>
-    </c:Book>
+
+    <deposit name="Absolutbank" country="BY">
+        <type>term</type>
+        <depositor>Donald Trump</depositor>
+        <account-id>2</account-id>
+        <amount-on-deposit>406</amount-on-deposit>
+        <profitability>6</profitability>
+        <time-constraints>61</time-constraints>
+    </deposit>
+
+    <deposit name="Alfabank" country="UA">
+        <type>term</type>
+        <depositor>Barack Obama</depositor>
+        <account-id>3</account-id>
+        <amount-on-deposit>197</amount-on-deposit>
+        <profitability>12</profitability>
+        <time-constraints>67</time-constraints>
+    </deposit>
+
+    <deposit name="Belveb" country="BY">
+        <type>term</type>
+        <depositor>George Bush</depositor>
+        <account-id>4</account-id>
+        <amount-on-deposit>426</amount-on-deposit>
+        <profitability>17</profitability>
+        <time-constraints>57</time-constraints>
+    </deposit>
+
+    <deposit name="VTB" country="RU">
+        <type>term</type>
+        <depositor>Bill Clinton</depositor>
+        <account-id>5</account-id>
+        <amount-on-deposit>398</amount-on-deposit>
+        <profitability>16</profitability>
+        <time-constraints>12</time-constraints>
+    </deposit>
+
+    <deposit name="MMBank" country="BY">
+        <type>term</type>
+        <depositor>Ronald Reagan</depositor>
+        <account-id>6</account-id>
+        <amount-on-deposit>851</amount-on-deposit>
+        <profitability>29</profitability>
+        <time-constraints>27</time-constraints>
+    </deposit>
+
+    <deposit name="BelAPB" country="RU">
+        <type>term</type>
+        <depositor>Jimmy Carter</depositor>
+        <account-id>7</account-id>
+        <amount-on-deposit>991</amount-on-deposit>
+        <profitability>16</profitability>
+        <time-constraints>19</time-constraints>
+    </deposit>
+
+    <deposit name="Belgazprombank" country="RU">
+        <type>term</type>
+        <depositor>Gerald Ford</depositor>
+        <account-id>8</account-id>
+        <amount-on-deposit>359</amount-on-deposit>
+        <profitability>16</profitability>
+        <time-constraints>37</time-constraints>
+    </deposit>
+
+    <deposit name="Zepterbank" country="UA">
+        <type>term</type>
+        <depositor>Richard Nixon</depositor>
+        <account-id>9</account-id>
+        <amount-on-deposit>834</amount-on-deposit>
+        <profitability>13</profitability>
+        <time-constraints>55</time-constraints>
+    </deposit>
+
+    <deposit name="Belarusbank" country="BY">
+        <type>term</type>
+        <depositor>Lyndon Johnson</depositor>
+        <account-id>10</account-id>
+        <amount-on-deposit>767</amount-on-deposit>
+        <profitability>9</profitability>
+        <time-constraints>12</time-constraints>
+    </deposit>
+
+    <deposit name="Fransabank" country="BY">
+        <type>term</type>
+        <depositor>John Kennedy</depositor>
+        <account-id>11</account-id>
+        <amount-on-deposit>952</amount-on-deposit>
+        <profitability>28</profitability>
+        <time-constraints>63</time-constraints>
+    </deposit>
+
+    <deposit name="TKBank" country="UA">
+        <type>term</type>
+        <depositor>Dwight Eisenhower</depositor>
+        <account-id>12</account-id>
+        <amount-on-deposit>924</amount-on-deposit>
+        <profitability>13</profitability>
+        <time-constraints>8</time-constraints>
+    </deposit>
+
+    <deposit name="Technobank" country="RU">
+        <type>term</type>
+        <depositor>Harry Truman</depositor>
+        <account-id>13</account-id>
+        <amount-on-deposit>445</amount-on-deposit>
+        <profitability>14</profitability>
+        <time-constraints>20</time-constraints>
+    </deposit>
+
+    <deposit name="Paritetbank" country="RU">
+        <type>term</type>
+        <depositor>Franklin Roosevelt</depositor>
+        <account-id>14</account-id>
+        <amount-on-deposit>613</amount-on-deposit>
+        <profitability>12</profitability>
+        <time-constraints>35</time-constraints>
+    </deposit>
+
+    <deposit name="Statusbank" country="UA">
+        <type>term</type>
+        <depositor>Herbert Hoover</depositor>
+        <account-id>15</account-id>
+        <amount-on-deposit>639</amount-on-deposit>
+        <profitability>22</profitability>
+        <time-constraints>51</time-constraints>
+    </deposit>
+
+    <deposit name="Priorbank" country="RU">
+        <type>term</type>
+        <depositor>Calvin Coolidge</depositor>
+        <account-id>16</account-id>
+        <amount-on-deposit>453</amount-on-deposit>
+        <profitability>19</profitability>
+        <time-constraints>70</time-constraints>
+    </deposit>
+
 </deposits>

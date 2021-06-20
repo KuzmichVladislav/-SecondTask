@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.com/deposits"
+          xsi:schemaLocation="http://www.example.com/deposits  deposits.xsd">
+
+    <deposit bank-name="Absolutbank" country="BY">
+        <depositor>
+            <name>Donald Trump</name>
+            <account-id>d01</account-id>
+            <amount-on-deposit>178.39</amount-on-deposit>
+            <profitability>18.86</profitability>
+            <opening-date>2019-05-24</opening-date>
+            <time-constraints>54</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="BSB-Bank" country="BY">
+        <depositor>
+            <name>Joe Biden</name>
+            <account-id>d02</account-id>
+            <amount-on-deposit>649.65</amount-on-deposit>
+            <profitability>10.82</profitability>
+            <opening-date>2020-02-02</opening-date>
+            <time-constraints>54</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Alfabank" country="UA">
+        <depositor>
+            <name>Barack Obama</name>
+            <account-id>d03</account-id>
+            <amount-on-deposit>971.80</amount-on-deposit>
+            <profitability>11.00</profitability>
+            <opening-date>2021-06-18</opening-date>
+            <time-constraints>46</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Belveb" country="BY">
+        <depositor>
+            <name>George Bush</name>
+            <account-id>d04</account-id>
+            <amount-on-deposit>217.36</amount-on-deposit>
+            <profitability>18.34</profitability>
+            <opening-date>2018-07-06</opening-date>
+            <time-constraints>57</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="VTB" country="RU">
+        <depositor>
+            <name>Bill Clinton</name>
+            <account-id>d05</account-id>
+            <amount-on-deposit>550.19</amount-on-deposit>
+            <profitability>2.82</profitability>
+            <opening-date>2020-06-24</opening-date>
+            <time-constraints>12</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="MMBank" country="BY">
+        <depositor>
+            <name>Ronald Reagan</name>
+            <account-id>d06</account-id>
+            <amount-on-deposit>352.73</amount-on-deposit>
+            <profitability>7.48</profitability>
+            <opening-date>2021-04-09</opening-date>
+            <time-constraints>40</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="BelAPB" country="RU">
+        <depositor>
+            <name>Jimmy Carter</name>
+            <account-id>d07</account-id>
+            <amount-on-deposit>379.70</amount-on-deposit>
+            <profitability>1.76</profitability>
+            <opening-date>2010-12-16</opening-date>
+            <time-constraints>19</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Belgazprombank" country="RU">
+        <depositor>
+            <name>Gerald Ford</name>
+            <account-id>d08</account-id>
+            <amount-on-deposit>865.37</amount-on-deposit>
+            <profitability>3.64</profitability>
+            <opening-date>2021-04-29</opening-date>
+            <time-constraints>52</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Zepterbank" country="UA">
+        <depositor>
+            <name>Richard Nixon</name>
+            <account-id>d09</account-id>
+            <amount-on-deposit>433.82</amount-on-deposit>
+            <profitability>17.98</profitability>
+            <opening-date>2018-01-01</opening-date>
+            <time-constraints>4</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Belarusbank" country="BY">
+        <depositor>
+            <name>Lyndon Johnson</name>
+            <account-id>d10</account-id>
+            <amount-on-deposit>663.85</amount-on-deposit>
+            <profitability>15.72</profitability>
+            <opening-date>2020-07-04</opening-date>
+            <time-constraints>38</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Fransabank" country="BY">
+        <depositor>
+            <name>John Kennedy</name>
+            <account-id>d11</account-id>
+            <amount-on-deposit>977.46</amount-on-deposit>
+            <profitability>4.73</profitability>
+            <opening-date>2021-05-03</opening-date>
+            <time-constraints>63</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="TKBank" country="UA">
+        <depositor>
+            <name>Dwight Eisenhower</name>
+            <account-id>d12</account-id>
+            <amount-on-deposit>849.66</amount-on-deposit>
+            <profitability>11.93</profitability>
+            <opening-date>2019-11-09</opening-date>
+            <time-constraints>71</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Technobank" country="RU">
+        <depositor>
+            <name>Harry Truman</name>
+            <account-id>d13</account-id>
+            <amount-on-deposit>779.97</amount-on-deposit>
+            <profitability>16.88</profitability>
+            <opening-date>2019-07-25</opening-date>
+            <time-constraints>20</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Paritetbank" country="RU">
+        <depositor>
+            <name>Franklin Roosevelt</name>
+            <account-id>d14</account-id>
+            <amount-on-deposit>33.75</amount-on-deposit>
+            <profitability>3.91</profitability>
+            <opening-date>2019-07-22</opening-date>
+            <time-constraints>35</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Statusbank" country="UA">
+        <depositor>
+            <name>Herbert Hoover</name>
+            <account-id>d15</account-id>
+            <amount-on-deposit>572.40</amount-on-deposit>
+            <profitability>6.38</profitability>
+            <opening-date>2020-01-13</opening-date>
+            <time-constraints>16</time-constraints>
+        </depositor>
+    </deposit>
+
+    <deposit bank-name="Priorbank" country="RU">
+        <depositor>
+            <name>Calvin Coolidge</name>
+            <account-id>d16</account-id>
+            <amount-on-deposit>835.31</amount-on-deposit>
+            <profitability>18.47</profitability>
+            <opening-date>2018-03-17</opening-date>
+            <time-constraints>70</time-constraints>
+        </depositor>
+    </deposit>
+</deposits>

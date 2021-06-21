@@ -1,0 +1,18 @@
+
+n
+java:S1192"QUse already-defined constant 'SCHEMA_PATH' instead of duplicating its value here.(—…ù8³½¥£¢/
+U
+java:S1118":Add a private constructor to hide the implicit public one.(“³ìäûÿÿÿÿ
+D
+java:S1172".Remove this unused method parameter "xmlPath".(ôÄ×
+Q
+java:S6212"/Declare this local variable with "var" instead.(Ïó£ìûÿÿÿÿ8¤¶‡Ê¢/
+L
+java:S6212"/Declare this local variable with "var" instead.(—…ù8¤¶‡Ê¢/
+Q
+java:S6212"/Declare this local variable with "var" instead.(­²œòşÿÿÿÿ8¥¶‡Ê¢/
+N	java:S106#"9Replace this use of System.out or System.err by a logger.(Õ¨Ò÷
+D
+java:S1068"/Remove this unused "SCHEMA_PATH" private field.(Ò¥óV
+@
+java:S1068"*Remove this unused "logger" private field.(®–º

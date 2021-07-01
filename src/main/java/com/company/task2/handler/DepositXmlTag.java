@@ -2,7 +2,8 @@ package com.company.task2.handler;
 
 enum DepositXmlTag {
     DEPOSITS("deposits"),
-    DEPOSIT("deposit"),
+    TERM_DEPOSIT("term-deposit"),
+    DEMAND_DEPOSIT("demand-deposit"),
     BANK_NAME("bank-name"),
     COUNTRY("country"),
     DEPOSITOR("depositor"),
@@ -11,7 +12,8 @@ enum DepositXmlTag {
     AMOUNT_ON_DEPOSIT("amount-on-deposit"),
     PROFITABILITY("profitability"),
     OPENING_DATE("opening-date"),
-    TIME_CONSTRAINTS("time-constraints");
+    TIME_CONSTRAINTS("time-constraints"),
+    SURRENDER("surrender");
 
     private final String tag;
 

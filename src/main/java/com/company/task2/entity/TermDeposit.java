@@ -3,8 +3,7 @@ package com.company.task2.entity;
 public class TermDeposit extends Deposit {
     int timeConstraints;
 
-    public TermDeposit(int timeConstraints) {
-        this.timeConstraints = timeConstraints;
+    public TermDeposit() {
     }
 
     public TermDeposit(String bankName, Country country, Depositor depositor, int timeConstraints) {
@@ -12,10 +11,21 @@ public class TermDeposit extends Deposit {
         this.timeConstraints = timeConstraints;
     }
 
+    public int getTimeConstraints() {
+        return timeConstraints;
+    }
+
+    public void setTimeConstraints(int timeConstraints) {
+        this.timeConstraints = timeConstraints;
+    }
+
     @Override
     public String toString() {
-        return "TermDeposit{" +
-                "timeConstraints=" + timeConstraints +
-                '}';
+        final StringBuilder sb = new StringBuilder("TermDeposit{");
+        sb.append(super.toString());
+        sb.append("timeConstraints=").append(timeConstraints);
+        sb.append('}');
+        sb.append('\n');
+        return sb.toString();
     }
 }

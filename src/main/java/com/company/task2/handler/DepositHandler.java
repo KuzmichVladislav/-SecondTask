@@ -1,7 +1,9 @@
 package com.company.task2.handler;
 
 import com.company.task2.entity.Country;
+import com.company.task2.entity.DemandDeposit;
 import com.company.task2.entity.Deposit;
+import com.company.task2.entity.TermDeposit;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -11,15 +13,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DepositHandler extends DefaultHandler {
-    private static final String ELEMENT_DEPOSIT = "deposit";
+    // private static final String ELEMENT_DEPOSIT = "deposit";
+    String termDeposit = DepositXmlTag.TERM_DEPOSIT.getTag();
+    String demandDeposit = DepositXmlTag.DEMAND_DEPOSIT.getTag();
     private Set<Deposit> deposits;
     private Deposit current;
     private DepositXmlTag currentXmlTag;
     private EnumSet<DepositXmlTag> withText;
 
     public DepositHandler() {
-        deposits = new HashSet<Deposit>();
-        withText = EnumSet.range(DepositXmlTag.NAME, DepositXmlTag.TIME_CONSTRAINTS);
+        deposits = new HashSet<>();
+        withText = EnumSet.range(DepositXmlTag.NAME, DepositXmlTag.SURRENDER);
     }
 
     public Set<Deposit> getDeposits() {
@@ -27,8 +31,8 @@ public class DepositHandler extends DefaultHandler {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
-        if (ELEMENT_DEPOSIT.equals(qName)) {
-            current = new Deposit();
+        if (termDeposit.equals(qName) || demandDeposit.equals(qName)) {
+            current = termDeposit.equals(qName) ? new TermDeposit() : new DemandDeposit();
             current.setBankName(attrs.getValue(0));
             if (attrs.getLength() == 2) { // warning!!!!
                 current.setCountry(Country.valueOf(attrs.getValue(1)));
@@ -44,7 +48,7 @@ public class DepositHandler extends DefaultHandler {
     }
 
     public void endElement(String uri, String localName, String qName) {
-        if (ELEMENT_DEPOSIT.equals(qName)) {
+        if (termDeposit.equals(qName) || demandDeposit.equals(qName)) {
             deposits.add(current);
         }
     }
@@ -58,9 +62,16 @@ public class DepositHandler extends DefaultHandler {
                 case AMOUNT_ON_DEPOSIT -> current.getDepositor().setAmountOnDeposit(Double.parseDouble(data));
                 case PROFITABILITY -> current.getDepositor().setProfitability(Double.parseDouble(data));
                 case OPENING_DATE -> current.getDepositor().setOpeningDate(Date.valueOf(data));
-                case TIME_CONSTRAINTS -> current.getDepositor().setTimeConstraints(Integer.parseInt(data));
-                // default -> throw new EnumConstantNotPresentException(
-                //        currentXmlTag.getDeclaringClass(), currentXmlTag.name());
+                case TIME_CONSTRAINTS -> {
+                    TermDeposit currentTerm = (TermDeposit) current;
+                    currentTerm.setTimeConstraints(Integer.parseInt(data));
+                }
+                case SURRENDER -> {
+                    DemandDeposit currentDeamond = (DemandDeposit) current;
+                    currentDeamond.setSurrender(Double.parseDouble(data));
+                }
+                default -> throw new EnumConstantNotPresentException(
+                        currentXmlTag.getDeclaringClass(), currentXmlTag.name());
             }
         }
         currentXmlTag = null;

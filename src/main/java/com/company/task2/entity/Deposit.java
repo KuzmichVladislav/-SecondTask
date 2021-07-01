@@ -2,7 +2,7 @@ package com.company.task2.entity;
 
 import java.util.Date;
 
-public class Deposit {
+public abstract class Deposit {
 
 
     private String bankName;
@@ -44,11 +44,12 @@ public class Deposit {
 
     @Override
     public String toString() {
-        return "Deposit{" +
-                "bankName='" + bankName + '\'' +
-                ", country=" + country.getFullName() +
-                ", depositor=" + depositor +
-                '}' + '\n';
+        final StringBuilder sb = new StringBuilder("Deposit{");
+        sb.append("bankName='").append(bankName).append('\'');
+        sb.append(", country=").append(country);
+        sb.append(", depositor=").append(depositor);
+        sb.append('}');
+        return sb.toString();
     }
 
     public class Depositor {
@@ -57,7 +58,6 @@ public class Deposit {
         private double amountOnDeposit;
         private double profitability;
         private Date openingDate;
-        private int timeConstraints;
 
         public Depositor() {
         }
@@ -68,7 +68,6 @@ public class Deposit {
             this.amountOnDeposit = amountOnDeposit;
             this.profitability = profitability;
             this.openingDate = openingDate;
-            this.timeConstraints = timeConstraints;
         }
 
         public String getName() {
@@ -111,24 +110,17 @@ public class Deposit {
             this.openingDate = openingDate;
         }
 
-        public int getTimeConstraints() {
-            return timeConstraints;
-        }
-
-        public void setTimeConstraints(int timeConstraints) {
-            this.timeConstraints = timeConstraints;
-        }
 
         @Override
         public String toString() {
-            return "Depositor{" +
-                    "name='" + name + '\'' +
-                    ", accountID='" + accountID + '\'' +
-                    ", amountOnDeposit=" + amountOnDeposit +
-                    ", profitability=" + profitability +
-                    ", openingDate=" + openingDate +
-                    ", timeConstraints=" + timeConstraints +
-                    '}';
+            final StringBuilder sb = new StringBuilder("Depositor{");
+            sb.append("name='").append(name).append('\'');
+            sb.append(", accountID='").append(accountID).append('\'');
+            sb.append(", amountOnDeposit=").append(amountOnDeposit);
+            sb.append(", profitability=").append(profitability);
+            sb.append(", openingDate=").append(openingDate);
+            sb.append('}');
+            return sb.toString();
         }
     }
 }

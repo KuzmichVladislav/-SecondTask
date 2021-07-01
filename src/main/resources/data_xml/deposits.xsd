@@ -3,13 +3,15 @@
         xmlns="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://www.example.com/deposits"
         elementFormDefault="qualified">
+
     <element name="deposits">
         <complexType>
             <sequence>
-                <element name="deposit" type="tns:Deposit" maxOccurs="unbounded"/>
+                <element ref="tns:deposit" maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>
+
     <complexType name="Deposit">
         <sequence>
             <element name="depositor" type="tns:Depositor"/>
@@ -26,6 +28,25 @@
         </attribute>
     </complexType>
 
+    <complexType name="Demand-deposit">
+        <complexContent>
+            <extension base="tns:Deposit">
+                <sequence>
+                    <element name="surrender" type="double"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Term-deposit">
+        <complexContent>
+            <extension base="tns:Deposit">
+                <sequence>
+                    <element name="time-constraints" type="integer"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
 
     <simpleType name="Bank-name">
         <restriction base="ID">
@@ -40,7 +61,6 @@
             <element name="amount-on-deposit" type="double"/>
             <element name="profitability" type="double"/>
             <element name="opening-date" type="date"/>
-            <element name="time-constraints" type="integer"/>
         </sequence>
     </complexType>
 
@@ -49,4 +69,9 @@
             <pattern value="\w\d+"/>
         </restriction>
     </simpleType>
+    
+    <element name="deposit" type="tns:Deposit" abstract="true"/>
+    <element name="demand-deposit" type="tns:Demand-deposit" substitutionGroup="tns:deposit"/>
+    <element name="term-deposit" type="tns:Term-deposit" substitutionGroup="tns:deposit"/>
+
 </schema>

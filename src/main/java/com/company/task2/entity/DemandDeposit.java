@@ -25,8 +25,11 @@ public class DemandDeposit extends Deposit {
 
     @Override
     public String toString() {
-        return "DemandDeposit{" +
-                "surrender=" + surrender +
-                '}';
+        final StringBuilder sb = new StringBuilder("DemandDeposit{");
+        sb.append(super.toString());
+        sb.append("surrender=").append(surrender);
+        sb.append('}');
+        sb.append('\n');
+        return sb.toString();
     }
 }

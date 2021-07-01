@@ -1,5 +1,8 @@
 package com.company.task2.main;
 
+import com.company.task2.parser.DepositsDomBuilder;
+import com.company.task2.parser.DepositsSaxBuilder;
+
 public class Main {
     public static void main(String[] args) {
        /*try {
@@ -17,8 +20,8 @@ public class Main {
         saxBuilder.buildSetDeposits("src/main/resources/data_xml/deposits.xml");
         System.out.println(saxBuilder.getDeposits());*/
 
-        /*DepositsDomBuilder domBuilder = new DepositsDomBuilder();
+        DepositsDomBuilder domBuilder = new DepositsDomBuilder();
         domBuilder.buildSetDeposits("src/main/resources/data_xml/deposits.xml");
-        System.out.println(domBuilder.getDeposits());*/
+        System.out.println(domBuilder.getDeposits());
     }
 }

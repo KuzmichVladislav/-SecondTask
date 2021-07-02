@@ -13,13 +13,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DepositHandler extends DefaultHandler {
-    // private static final String ELEMENT_DEPOSIT = "deposit";
     String termDeposit = DepositXmlTag.TERM_DEPOSIT.getTag();
     String demandDeposit = DepositXmlTag.DEMAND_DEPOSIT.getTag();
-    private Set<Deposit> deposits;
+    private final Set<Deposit> deposits;
     private Deposit current;
     private DepositXmlTag currentXmlTag;
-    private EnumSet<DepositXmlTag> withText;
+    private final EnumSet<DepositXmlTag> withText;
 
     public DepositHandler() {
         deposits = new HashSet<>();
@@ -34,7 +33,7 @@ public class DepositHandler extends DefaultHandler {
         if (termDeposit.equals(qName) || demandDeposit.equals(qName)) {
             current = termDeposit.equals(qName) ? new TermDeposit() : new DemandDeposit();
             current.setBankName(attrs.getValue(0));
-            if (attrs.getLength() == 2) { // warning!!!!
+            if (attrs.getLength() == 2) {
                 current.setCountry(Country.valueOf(attrs.getValue(1)));
             }
 

@@ -12,9 +12,9 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.util.Set;
 
-public class DepositsSaxBuilder {
+public class DepositsSaxBuilder extends AbstractDepositsBuilder {
     private Set<Deposit> deposits;
-    private DepositHandler handler = new DepositHandler();
+    private final DepositHandler handler = new DepositHandler();
     private XMLReader reader;
 
     public DepositsSaxBuilder() {
@@ -29,10 +29,12 @@ public class DepositsSaxBuilder {
         reader.setContentHandler(handler);
     }
 
+    @Override
     public Set<Deposit> getDeposits() {
         return deposits;
     }
 
+    @Override
     public void buildSetDeposits(String filename) {
         try {
             reader.parse(filename);

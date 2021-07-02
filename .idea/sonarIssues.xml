@@ -13,7 +13,7 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/../Task3/pom.xml">
+        <entry key="$PROJECT_DIR$/../FirstTask/src/test/java/com/company/task1/reader/impl/ArrayReaderImplTest.java">
           <value>
             <set />
           </value>
@@ -34,6 +34,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/builder/AbstractDepositsBuilder.java">
           <value>
             <set />
           </value>
@@ -123,7 +128,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/parser/AbstractDepositsBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/parser/DeopsitsSaxBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/parser/DepositBuilderFactory.java">
           <value>
             <set />
           </value>
@@ -138,7 +153,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/parser/DepositsDomBuilderTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/parser/DepositsSaxBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/parser/DepositsStaxBuilder.java">
           <value>
             <set />
           </value>
@@ -154,6 +179,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/parser/StudentsDomBuilder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/company/task2/sig.java">
           <value>
             <set />
           </value>
@@ -219,6 +249,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/resources/log4j2.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Task3/pom.xml">
           <value>
             <set />
           </value>

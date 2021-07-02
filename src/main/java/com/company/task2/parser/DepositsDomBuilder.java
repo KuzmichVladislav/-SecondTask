@@ -18,12 +18,12 @@ import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DepositsDomBuilder {
-    private Set<Deposit> deposits;
+public class DepositsDomBuilder extends AbstractDepositsBuilder {
+    private final Set<Deposit> deposits;
     private DocumentBuilder docBuilder;
 
     public DepositsDomBuilder() {
-        deposits = new HashSet<Deposit>();
+        deposits = new HashSet<>();
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
@@ -40,10 +40,12 @@ public class DepositsDomBuilder {
         return text;
     }
 
+    @Override
     public Set<Deposit> getDeposits() {
         return deposits;
     }
 
+    @Override
     public void buildSetDeposits(String filename) {
         Document doc;
         try {
@@ -53,13 +55,13 @@ public class DepositsDomBuilder {
             NodeList termDepositsList = root1.getElementsByTagName("term-deposit");
             for (int i = 0; i < termDepositsList.getLength(); i++) {
                 Element depositElement = (Element) termDepositsList.item(i);
-                Deposit deposit = (TermDeposit) buildTermDeposit(depositElement);
+                Deposit deposit = buildTermDeposit(depositElement);
                 deposits.add(deposit);
             }
             NodeList demandDepositsList = root2.getElementsByTagName("demand-deposit");
             for (int i = 0; i < demandDepositsList.getLength(); i++) {
                 Element depositElement = (Element) demandDepositsList.item(i);
-                Deposit deposit = (DemandDeposit) buildDemandDeposit(depositElement);
+                Deposit deposit = buildDemandDeposit(depositElement);
                 deposits.add(deposit);
             }
         } catch (IOException | SAXException e) {

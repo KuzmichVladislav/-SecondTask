@@ -1,10 +1,11 @@
 package com.company.task2.main;
 
-import com.company.task2.parser.DepositsDomBuilder;
-import com.company.task2.parser.DepositsSaxBuilder;
+import com.company.task2.parser.AbstractDepositsBuilder;
+import com.company.task2.parser.DepositBuilderFactory;
 
 public class Main {
     public static void main(String[] args) {
+
        /*try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser parser = factory.newSAXParser();
@@ -16,12 +17,9 @@ public class Main {
             e.printStackTrace();
         }*/
 
-        /*DepositsSaxBuilder saxBuilder = new DepositsSaxBuilder();
-        saxBuilder.buildSetDeposits("src/main/resources/data_xml/deposits.xml");
-        System.out.println(saxBuilder.getDeposits());*/
-
-        DepositsDomBuilder domBuilder = new DepositsDomBuilder();
-        domBuilder.buildSetDeposits("src/main/resources/data_xml/deposits.xml");
-        System.out.println(domBuilder.getDeposits());
+        String type = "stax";
+        AbstractDepositsBuilder builder = DepositBuilderFactory.createDepositsBuilder(type);
+        builder.buildSetDeposits("src/main/resources/data_xml/deposits.xml");
+        System.out.println(builder.getDeposits());
     }
 }

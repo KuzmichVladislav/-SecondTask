@@ -1,6 +1,6 @@
 package com.company.task2.handler;
 
-enum DepositXmlTag {
+public enum DepositXmlTag {
     DEPOSITS("deposits"),
     TERM_DEPOSIT("term-deposit"),
     DEMAND_DEPOSIT("demand-deposit"),

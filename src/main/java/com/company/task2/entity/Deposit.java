@@ -9,10 +9,10 @@ public abstract class Deposit {
     private Country country;
     private Depositor depositor = new Depositor();
 
-    public Deposit() {
+    protected Deposit() {
     }
 
-    public Deposit(String bankName, Country country, Depositor depositor) {
+    protected Deposit(String bankName, Country country, Depositor depositor) {
         this.bankName = bankName;
         this.country = country;
         this.depositor = depositor;
@@ -52,7 +52,7 @@ public abstract class Deposit {
         return sb.toString();
     }
 
-    public class Depositor {
+    public static class Depositor {
         private String name;
         private String accountID;
         private double amountOnDeposit;
@@ -62,7 +62,7 @@ public abstract class Deposit {
         public Depositor() {
         }
 
-        public Depositor(String name, String accountID, double amountOnDeposit, double profitability, Date openingDate, int timeConstraints) {
+        public Depositor(String name, String accountID, double amountOnDeposit, double profitability, Date openingDate) {
             this.name = name;
             this.accountID = accountID;
             this.amountOnDeposit = amountOnDeposit;

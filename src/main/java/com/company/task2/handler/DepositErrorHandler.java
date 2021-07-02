@@ -7,7 +7,7 @@ import org.xml.sax.SAXParseException;
 
 public class DepositErrorHandler implements ErrorHandler {
 
-    private static Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
 
     @Override
     public void warning(SAXParseException e) {

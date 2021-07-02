@@ -2,8 +2,6 @@ package com.company.task2.validator;
 
 import com.company.task2.exception.DepositException;
 import com.company.task2.handler.DepositErrorHandler;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -16,8 +14,9 @@ import java.io.File;
 import java.io.IOException;
 
 public class DepositXMLValidator {
-    private static final String SCHEMA_PATH = "src/main/resources/data_xml/deposits.xsd";
-    private static Logger logger = LogManager.getLogger();
+
+    private DepositXMLValidator() {
+    }
 
     public static boolean validateXMLFile(String xmlPath) throws DepositException {
         String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;

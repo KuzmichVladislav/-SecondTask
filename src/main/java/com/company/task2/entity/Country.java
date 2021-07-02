@@ -5,7 +5,7 @@ public enum Country {
     RU("Russia"),
     UA("Ukraine");
 
-    private String fullName;
+    private final String fullName;
 
     Country(String fullName) {
         this.fullName = fullName;

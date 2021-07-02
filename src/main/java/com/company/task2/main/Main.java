@@ -17,7 +17,7 @@ public class Main {
             e.printStackTrace();
         }*/
 
-        String type = "stax";
+        String type = "dom";
         AbstractDepositsBuilder builder = DepositBuilderFactory.createDepositsBuilder(type);
         builder.buildSetDeposits("src/main/resources/data_xml/deposits.xml");
         System.out.println(builder.getDeposits());

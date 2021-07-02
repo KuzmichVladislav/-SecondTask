@@ -21,11 +21,10 @@ public class TermDeposit extends Deposit {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("TermDeposit{");
+        final StringBuilder sb = new StringBuilder("Term deposit").append('\n');
         sb.append(super.toString());
-        sb.append("timeConstraints=").append(timeConstraints);
-        sb.append('}');
-        sb.append('\n');
+        sb.append("\t\tTime constraints: ").append(timeConstraints);
+        sb.append("\n\n");
         return sb.toString();
     }
 }

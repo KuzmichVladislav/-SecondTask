@@ -44,11 +44,9 @@ public abstract class Deposit {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Deposit{");
-        sb.append("bankName='").append(bankName).append('\'');
-        sb.append(", country=").append(country);
-        sb.append(", depositor=").append(depositor);
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder("Bank name ").append(bankName).append('\n');
+        sb.append("\tCountry ").append(country.getFullName()).append('\n');
+        sb.append("\t\t Depositor ").append(depositor);
         return sb.toString();
     }
 
@@ -113,13 +111,11 @@ public abstract class Deposit {
 
         @Override
         public String toString() {
-            final StringBuilder sb = new StringBuilder("Depositor{");
-            sb.append("name='").append(name).append('\'');
-            sb.append(", accountID='").append(accountID).append('\'');
-            sb.append(", amountOnDeposit=").append(amountOnDeposit);
-            sb.append(", profitability=").append(profitability);
-            sb.append(", openingDate=").append(openingDate);
-            sb.append('}');
+            final StringBuilder sb = new StringBuilder("name: ").append(name).append('\n');
+            sb.append("\t\t\t Account ID: ").append(accountID).append('\n');
+            sb.append("\t\t\t Amount on deposit: ").append(amountOnDeposit).append('\n');
+            sb.append("\t\t\t Profitability: ").append(profitability).append('\n');
+            sb.append("\t\t\t Opening date: ").append(openingDate).append('\n');
             return sb.toString();
         }
     }

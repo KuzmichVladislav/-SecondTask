@@ -50,18 +50,18 @@ public class DepositsDomBuilder extends AbstractDepositsBuilder {
         Document doc;
         try {
             doc = docBuilder.parse(filename);
-            Element root1 = doc.getDocumentElement();
-            Element root2 = doc.getDocumentElement();
-            NodeList termDepositsList = root1.getElementsByTagName("term-deposit");
+            Element termRoot = doc.getDocumentElement();
+            Element demandRoot = doc.getDocumentElement();
+            NodeList termDepositsList = termRoot.getElementsByTagName("term-deposit");
             for (int i = 0; i < termDepositsList.getLength(); i++) {
                 Element depositElement = (Element) termDepositsList.item(i);
-                Deposit deposit = buildTermDeposit(depositElement);
+                Deposit deposit = buildDeposit(depositElement);
                 deposits.add(deposit);
             }
-            NodeList demandDepositsList = root2.getElementsByTagName("demand-deposit");
+            NodeList demandDepositsList = demandRoot.getElementsByTagName("demand-deposit");
             for (int i = 0; i < demandDepositsList.getLength(); i++) {
                 Element depositElement = (Element) demandDepositsList.item(i);
-                Deposit deposit = buildDemandDeposit(depositElement);
+                Deposit deposit = buildDeposit(depositElement);
                 deposits.add(deposit);
             }
         } catch (IOException | SAXException e) {
@@ -69,8 +69,13 @@ public class DepositsDomBuilder extends AbstractDepositsBuilder {
         }
     }
 
-    private Deposit buildTermDeposit(Element depositElement) {
-        TermDeposit deposit = new TermDeposit();
+    private Deposit buildDeposit(Element depositElement) {
+        Deposit deposit;
+        if (depositElement.getTagName().equals("term-deposit")){
+            deposit = new TermDeposit();
+        }else {
+            deposit = new DemandDeposit();
+        }
         deposit.setCountry(Country.valueOf(depositElement.getAttribute("country")));
         Deposit.Depositor depositor = deposit.getDepositor();
         Element depositorElement = (Element) depositElement.getElementsByTagName("depositor").item(0);
@@ -82,27 +87,15 @@ public class DepositsDomBuilder extends AbstractDepositsBuilder {
         depositor.setProfitability(profitability);
         Date openingDate = Date.valueOf(getElementTextContent(depositElement, "opening-date"));
         depositor.setOpeningDate(openingDate);
-        Integer timeConstraints = Integer.parseInt(getElementTextContent(depositElement, "time-constraints"));
-        deposit.setTimeConstraints(timeConstraints);
-        deposit.setBankName(depositElement.getAttribute("bank-name"));
-        return deposit;
-    }
-
-    private Deposit buildDemandDeposit(Element depositElement) {
-        DemandDeposit deposit = new DemandDeposit();
-        deposit.setCountry(Country.valueOf(depositElement.getAttribute("country")));
-        Deposit.Depositor depositor = deposit.getDepositor();
-        Element depositorElement = (Element) depositElement.getElementsByTagName("depositor").item(0);
-        depositor.setName(getElementTextContent(depositElement, "name"));
-        depositor.setAccountID(getElementTextContent(depositElement, "account-id"));
-        Double amountOnDeposit = Double.parseDouble(getElementTextContent(depositElement, "amount-on-deposit"));
-        depositor.setAmountOnDeposit(amountOnDeposit);
-        Double profitability = Double.parseDouble(getElementTextContent(depositElement, "profitability"));
-        depositor.setProfitability(profitability);
-        Date openingDate = Date.valueOf(getElementTextContent(depositElement, "opening-date"));
-        depositor.setOpeningDate(openingDate);
-        Double surrender = Double.parseDouble(getElementTextContent(depositElement, "surrender"));
-        deposit.setSurrender(surrender);
+        if (depositElement.getTagName().equals("term-deposit")){
+            Integer timeConstraints = Integer.parseInt(getElementTextContent(depositElement, "time-constraints"));
+            TermDeposit termDeposit = (TermDeposit) deposit;
+            termDeposit.setTimeConstraints(timeConstraints);
+        }else {
+            Double surrender = Double.parseDouble(getElementTextContent(depositElement, "surrender"));
+            DemandDeposit demandDeposit = (DemandDeposit) deposit;
+            demandDeposit.setSurrender(surrender);
+        }
         deposit.setBankName(depositElement.getAttribute("bank-name"));
         return deposit;
     }

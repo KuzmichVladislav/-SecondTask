@@ -69,7 +69,7 @@
             <pattern value="\w\d+"/>
         </restriction>
     </simpleType>
-    
+
     <element name="deposit" type="tns:Deposit" abstract="true"/>
     <element name="demand-deposit" type="tns:Demand-deposit" substitutionGroup="tns:deposit"/>
     <element name="term-deposit" type="tns:Term-deposit" substitutionGroup="tns:deposit"/>

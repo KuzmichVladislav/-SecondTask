@@ -1,0 +1,2 @@
+[FATAL] 2021-08-02 14:51:58,579 DepositErrorHandler.fatalError() - 11 : 13 - The end-tag for element type "amount-on-deposit" must end with a '>' delimiter.
+[ERROR] 2021-08-02 14:51:58,593 DepositXMLValidator.validateXMLFile() - C:\Users\kyzme\IdeaProjects\Task2\target\classes\data_xml\wrong_file.xml is not correct or valid

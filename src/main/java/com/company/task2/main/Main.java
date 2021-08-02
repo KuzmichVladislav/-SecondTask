@@ -3,23 +3,21 @@ package com.company.task2.main;
 import com.company.task2.parser.AbstractDepositsBuilder;
 import com.company.task2.parser.DepositBuilderFactory;
 
-public class Main {
-    public static void main(String[] args) {
+import java.io.File;
+import java.net.URL;
 
-       /*try {
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser parser = factory.newSAXParser();
-            XMLReader reader = parser.getXMLReader();
-            reader.setContentHandler(new ConsoleDepositHandler());
-            reader.setErrorHandler(new DepositErrorHandler());
-            reader.parse("src/main/resources/data_xml/deposits.xml");
-        } catch (SAXException | IOException | ParserConfigurationException e) {
-            e.printStackTrace();
-        }*/
+public class Main {
+    private static final String RELATIVE_FILE_PATH = "data_xml/deposits.xml";
+
+    public static void main(String[] args) {
+        ClassLoader classLoader = Main.class.getClassLoader();
+        URL resource = classLoader.getResource(RELATIVE_FILE_PATH);
+        assert resource != null;
+        String absolutePath = new File(resource.getFile()).getAbsolutePath();
 
         String type = "dom";
         AbstractDepositsBuilder builder = DepositBuilderFactory.createDepositsBuilder(type);
-        builder.buildSetDeposits("src/main/resources/data_xml/deposits.xml");
+        builder.buildSetDeposits(absolutePath);
         System.out.println(builder.getDeposits());
     }
 }
